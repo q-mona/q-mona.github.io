@@ -1,0 +1,1 @@
+{"type":"Live2D Model Setting","name":"xxb_model","model":"xxb_model.moc","textures":["textures/xxb.png"],"motions":{"idle":[{"file":"motions/Idle.mtn"}],"sleepy":[{"file":"motions/Nemui.mtn"}],"flick_head":[{"file":"motions/Anone_Synced.mtn"}],"tap_body":[{"file":"motions/Dance.mtn"}]}}
