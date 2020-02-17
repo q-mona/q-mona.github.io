@@ -3,7 +3,7 @@
   <entry>
     <title>在hexo中使用自定义的live2d模型</title>
     <url>/hexo-live2d/</url>
-    <content><![CDATA[<h2 id="在普通网页使用live2d"><a href="#在普通网页使用live2d" class="headerlink" title="在普通网页使用live2d"></a>在普通网页使用live2d</h2><p>见<a href="https://www.mona.cool/live2d.html">https://www.mona.cool/live2d.html</a></p>
+    <content><![CDATA[<h2 id="在普通网页使用live2d"><a href="#在普通网页使用live2d" class="headerlink" title="在普通网页使用live2d"></a>在普通网页使用live2d</h2><p>见<a href="https://www.mona.cool/live2d/" target="_blank" rel="noopener">https://www.mona.cool/live2d/</a></p>
 <h2 id="在hexo使用默认的live2d"><a href="#在hexo使用默认的live2d" class="headerlink" title="在hexo使用默认的live2d"></a>在hexo使用默认的live2d</h2><p>几步就可以~</p>
 <h3 id="first"><a href="#first" class="headerlink" title="first"></a>first</h3><p>git bash(我使用的)中输入以下指令 安装live2d插件</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
@@ -13,7 +13,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install live2d-widget-model-shizuku(此处为上文mode：use的名称)</span><br></pre></td></tr></table></figure>
 <p>详细文档和可用live2d模型见<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">https://github.com/EYHN/hexo-helper-live2d</a></p>
 <h2 id="在hexo中使用自己的live2d"><a href="#在hexo中使用自己的live2d" class="headerlink" title="在hexo中使用自己的live2d"></a>在hexo中使用自己的live2d</h2><p>官方的live2d虽然安装简单但是太普通了(还不够可爱啊！！)</p>
-<h3 id="1-移动目录"><a href="#1-移动目录" class="headerlink" title="1.移动目录"></a>1.移动目录</h3><p>将你下好的live2d放置themes/next(我的主题)/source中<br>我的live2d保存在github上<br>资源见<a href="https://www.mona.cool/live2d.html">https://www.mona.cool/live2d.html</a></p>
+<h3 id="1-移动目录"><a href="#1-移动目录" class="headerlink" title="1.移动目录"></a>1.移动目录</h3><p>将你下好的live2d放置themes/next(我的主题)/source中<br>我的live2d保存在github上<br>资源见<a href="https://www.mona.cool/live2d/" target="_blank" rel="noopener">https://www.mona.cool/live2d/</a></p>
 <h3 id="2-修改layout"><a href="#2-修改layout" class="headerlink" title="2.修改layout"></a>2.修改layout</h3><p>移至themes/next/layout/_layout.swig(或.ejs还是啥的都一样)<br>在body中添加</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--css的路径--&gt;</span><br><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://cdn.jsdelivr.net/gh/q-mona/live2d@latest/live2d/live2d/css/live2d.css"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--我的live2d布局--&gt;</span><br><span class="line">&lt;div id=<span class="string">"landlord"</span>&gt;</span><br><span class="line">  &lt;div id=<span class="string">"test"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"message"</span> style=<span class="string">"opacity:0"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;canvas id=<span class="string">"live2d"</span> width=<span class="string">"280"</span> height=<span class="string">"250"</span> class=<span class="string">"live2d"</span>&gt;&lt;/canvas&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"hide-button"</span>&gt;隐藏&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--jQuery路径--&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.jsdelivr.net/gh/q-mona/mona@latest/js/jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  &lt;!--用于message.js中initTips()的url--&gt;</span><br><span class="line">  var message_Path = <span class="string">'/live2d/'</span></span><br><span class="line">  &lt;!--你的主页路径 删了也没啥--&gt;</span><br><span class="line">  var home_Path = <span class="string">'https://q-mona.github.io/'</span></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--引入js--&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.jsdelivr.net/gh/q-mona/live2d@latest/live2d/live2d/js/live2d.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.jsdelivr.net/gh/q-mona/live2d@1.2/live2d/live2d/js/message.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--引入live2d--&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  loadlive2d(<span class="string">"live2d"</span>, <span class="string">"https://cdn.jsdelivr.net/gh/q-mona/live2d@1.2/live2d/live2d/model/tia/model.json"</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>此处所有路径改为你自己的就行<br>注:此处路径和source中的文件同级<br>例:loadlive2d(“live2d”, “live2d/model/tia/model.json”);<br>最后hexo clean &amp;&amp; hexo g &amp;&amp; hexo s就完成了</p>
@@ -22,9 +22,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>live2d</tag>
         <tag>web</tag>
         <tag>hexo</tag>
+        <tag>live2d</tag>
       </tags>
   </entry>
   <entry>
@@ -72,8 +72,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>live2d</tag>
         <tag>web</tag>
+        <tag>live2d</tag>
       </tags>
   </entry>
 </search>
