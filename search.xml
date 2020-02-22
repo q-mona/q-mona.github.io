@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>WeChat_translation</title>
+    <title>微信小程序实现翻译功能</title>
     <url>/WeChat-translation/</url>
     <content><![CDATA[<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在写这个微信小程序之前正好学习了一下vue.js<br>结果微信小程序这玩意儿的代码格式和vue竟然差不多<br>刚好可以一般写微信小程序一边复习一下vue的用法 一举两得啊=。=<br><strong>本项目只是我对微信小程序的初步认识哈 如果程序有缺憾(肯定有=。=)请见谅</strong></p>
 <h2 id="项目资源地址"><a href="#项目资源地址" class="headerlink" title="项目资源地址"></a>项目资源地址</h2><p><a href="https://github.com/q-mona/wechat-translation/tree/master" target="_blank" rel="noopener">https://github.com/q-mona/wechat-translation/tree/master</a></p>
