@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.mona.cool/js-prototype/</loc>
+    
+    <lastmod>2020-03-22T04:06:08.912Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.mona.cool/webpack/</loc>
     
     <lastmod>2020-03-22T04:00:41.920Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://www.mona.cool/vue-lifecycle/</loc>
     
     <lastmod>2020-03-22T04:00:34.338Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.mona.cool/js-prototype/</loc>
-    
-    <lastmod>2020-03-22T04:00:22.735Z</lastmod>
     
   </url>
   
