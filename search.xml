@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/test/</url>
-    <content><![CDATA[function gcd(a, b){
-    return b == 0? a : gcd(b, a % b)
-}
-
-console.log(gcd(350,100))]]></content>
-  </entry>
-  <entry>
     <title>使用的js小技巧</title>
     <url>/js-skill-1/</url>
     <content><![CDATA[<h1 id="js数组的使用方法"><a href="#js数组的使用方法" class="headerlink" title="js数组的使用方法"></a>js数组的使用方法</h1><h2 id="sort-方法"><a href="#sort-方法" class="headerlink" title="sort()方法"></a>sort()方法</h2><p>sort 多用于数组的排序<br>a 表示数组的<strong>后一项</strong><br>b 表示数组的<strong>前一项</strong>  </p>
