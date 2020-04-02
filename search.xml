@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/test/</url>
-    <content><![CDATA[let arr = [1, 6, 1, 5, 2, 54, 12, 4, 21, 21, -12, -3]
-
-function countSort(arr) {
-    let max = Math.max(...arr)
-    let min = Math.min(...arr)
-    let len = arr.length
-    let tmp = new Array(max - min + 1)
-
-    // 开始计数
-    arr.forEach(item => {
-        // 数组为undefined初始化为1 否则加1
-        if (!tmp[item - min])
-            tmp[item - min] = 1
-        else
-            tmp[item - min]++
-    });
-
-    arr = [] // 直接对原数组进行修改
-    tmp.forEach((item, index) => {
-        while (item > 0) {
-            arr.push(index + min)
-            item--
-        }
-    })
-    return arr
-}
-
-console.log(countSort(arr))
-// [ -12, -3, 1,  1,  2, 4,  5, 6, 12, 21, 21, 54 ]]]></content>
-  </entry>
-  <entry>
     <title>实用的js小技巧</title>
     <url>/js-skill-1/</url>
     <content><![CDATA[<h1 id="js数组的使用方法"><a href="#js数组的使用方法" class="headerlink" title="js数组的使用方法"></a>js数组的使用方法</h1><h2 id="sort-方法"><a href="#sort-方法" class="headerlink" title="sort()方法"></a>sort()方法</h2><p>sort 多用于数组的排序<br>a 表示数组的<strong>后一项</strong><br>b 表示数组的<strong>前一项</strong>  </p>
