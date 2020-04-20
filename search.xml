@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>js常用排序</title>
+    <url>/js-sort/</url>
+    <content><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let arr &#x3D; [1, 2, 5, 45, 32, 45, 67, 87, 6]</span><br><span class="line"></span><br><span class="line">function quickSort(arr) &#123;</span><br><span class="line">    &#x2F;&#x2F; 空数组直接返回</span><br><span class="line">    if (arr.length &lt; 1)</span><br><span class="line">        return []</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 取数组的中间的值为分割线</span><br><span class="line">    let length &#x3D; Math.floor(arr.length &#x2F; 2)</span><br><span class="line">    let q &#x3D; arr.splice(length, 1)[0]</span><br><span class="line">    let left &#x3D; [], right &#x3D; []</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 小于分割的值放左 大于等于放右</span><br><span class="line">    for (let i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] &lt; q)</span><br><span class="line">            left.push(arr[i])</span><br><span class="line">        else</span><br><span class="line">            right.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 递归重复上面做法直到为空数组</span><br><span class="line">    return quickSort(left).concat(q, quickSort(right))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(quickSort(arr))</span><br><span class="line">&#x2F;&#x2F; 结果为 [ 1,  2,  5,  6, 32, 45, 45, 67, 87 ]</span><br></pre></td></tr></table></figure>
+
+<h1 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h1><p>典型的牺牲空间提高速度的方法 <strong>数组过大</strong>时不建议使用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let arr &#x3D; [1, 6, 1, 5, 2, 54, 12, 4, 21, 21, -12, -3]</span><br><span class="line"></span><br><span class="line">function countSort(arr) &#123;</span><br><span class="line">    let max &#x3D; Math.max(...arr)</span><br><span class="line">    let min &#x3D; Math.min(...arr)</span><br><span class="line">    let tmp &#x3D; new Array(max - min + 1)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 开始计数</span><br><span class="line">    arr.forEach(item &#x3D;&gt; &#123;</span><br><span class="line">        &#x2F;&#x2F; 数组为undefined初始化为1 否则加1</span><br><span class="line">        &#x2F;&#x2F; item-min是为了防止负数的出现</span><br><span class="line">        if (!tmp[item - min])</span><br><span class="line">            tmp[item - min] &#x3D; 1</span><br><span class="line">        else</span><br><span class="line">            tmp[item - min]++</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    arr &#x3D; [] &#x2F;&#x2F; 直接对原数组进行修改</span><br><span class="line">    tmp.forEach((item, index) &#x3D;&gt; &#123;</span><br><span class="line">        while (item &gt; 0) &#123;</span><br><span class="line">            arr.push(index + min)</span><br><span class="line">            item--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(countSort(arr))</span><br><span class="line">&#x2F;&#x2F; [ -12, -3, 1,  1,  2, 4,  5, 6, 12, 21, 21, 54 ]</span><br></pre></td></tr></table></figure>
+
+<h1 id="并归排序"><a href="#并归排序" class="headerlink" title="并归排序"></a>并归排序</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let arr &#x3D; [1,51, 54, 45, 212, 4, 512, 2, 5152, 121, 4, 52, 123]</span><br><span class="line"></span><br><span class="line">function mergeSort(arr) &#123;</span><br><span class="line">  if (arr.length &#x3D;&#x3D; 1)</span><br><span class="line">    return arr</span><br><span class="line"></span><br><span class="line">  let mid &#x3D; Math.floor(arr.length &#x2F; 2)</span><br><span class="line">  let left &#x3D; arr.slice(0, mid)</span><br><span class="line">  let right &#x3D; arr.slice(mid, arr.length)</span><br><span class="line"></span><br><span class="line">  return merge(mergeSort(left), mergeSort(right))</span><br><span class="line">&#125;</span><br><span class="line">function merge(left, right) &#123;</span><br><span class="line">  let tmp &#x3D; []</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; array.shift()返回并删除数组的第一个元素</span><br><span class="line">  while (left.length &gt; 0 &amp;&amp; right.length &gt; 0) &#123;</span><br><span class="line">    left[0] &lt; right[0] ? tmp.push(left.shift()) : tmp.push(right.shift())</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return tmp.concat(left, right)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(mergeSort(arr))</span><br><span class="line">&#x2F;&#x2F; [ 1, 2, 4, 4, 45, 51, 52, 54, 121, 123, 212, 512, 5152 ]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue-router的笔记</title>
     <url>/vue-router/</url>
     <content><![CDATA[<h1 id="安装vue-router"><a href="#安装vue-router" class="headerlink" title="安装vue-router"></a>安装vue-router</h1><ul>
@@ -36,8 +52,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>vue</tag>
         <tag>web</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -65,8 +81,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>vue</tag>
         <tag>web</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>
@@ -87,15 +103,8 @@
 <h1 id="寻找最大公约数"><a href="#寻找最大公约数" class="headerlink" title="寻找最大公约数"></a>寻找最大公约数</h1><p>三目运算+递归 =。=</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function gcd(a, b)&#123;</span><br><span class="line">    return b &#x3D;&#x3D; 0? a : gcd(b, a%b)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(gcd(350, 100)) &#x2F;&#x2F; 结果为50</span><br></pre></td></tr></table></figure>
 
-<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><ul>
-<li>快速排序  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let arr &#x3D; [1, 2, 5, 45, 32, 45, 67, 87, 6]</span><br><span class="line"></span><br><span class="line">function quickSort(arr) &#123;</span><br><span class="line">    &#x2F;&#x2F; 空数组直接返回</span><br><span class="line">    if (arr.length &lt; 1)</span><br><span class="line">        return []</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 取数组的中间的值为分割线</span><br><span class="line">    let length &#x3D; Math.floor(arr.length &#x2F; 2)</span><br><span class="line">    let q &#x3D; arr.splice(length, 1)[0]</span><br><span class="line">    let left &#x3D; [], right &#x3D; []</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 小于分割的值放左 大于等于放右</span><br><span class="line">    for (let i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] &lt; q)</span><br><span class="line">            left.push(arr[i])</span><br><span class="line">        else</span><br><span class="line">            right.push(arr[i])</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 递归重复上面做法直到为空数组</span><br><span class="line">    return quickSort(left).concat(q, quickSort(right))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(quickSort(arr))</span><br><span class="line">&#x2F;&#x2F; 结果为 [ 1,  2,  5,  6, 32, 45, 45, 67, 87 ]</span><br></pre></td></tr></table></figure>
+<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function deepCopy(obj) &#123;</span><br><span class="line">  let result &#x3D; Array.isArray(obj) ? [] : &#123;&#125;</span><br><span class="line">  for (let key in obj) &#123;</span><br><span class="line">    if (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">      if (typeof obj[key] &#x3D;&#x3D;&#x3D; &#39;object&#39; &amp;&amp; obj.key !&#x3D;&#x3D; null)</span><br><span class="line">        result[key] &#x3D; deepCopy(obj[key])</span><br><span class="line">      else result[key] &#x3D; obj[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>计数排序<br>典型的牺牲空间提高速度的方法 <strong>数组过大</strong>时不建议使用</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let arr &#x3D; [1, 6, 1, 5, 2, 54, 12, 4, 21, 21, -12, -3]</span><br><span class="line"></span><br><span class="line">function countSort(arr) &#123;</span><br><span class="line">    let max &#x3D; Math.max(...arr)</span><br><span class="line">    let min &#x3D; Math.min(...arr)</span><br><span class="line">    let tmp &#x3D; new Array(max - min + 1)</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 开始计数</span><br><span class="line">    arr.forEach(item &#x3D;&gt; &#123;</span><br><span class="line">        &#x2F;&#x2F; 数组为undefined初始化为1 否则加1</span><br><span class="line">        if (!tmp[item - min])</span><br><span class="line">            tmp[item - min] &#x3D; 1</span><br><span class="line">        else</span><br><span class="line">            tmp[item - min]++</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    arr &#x3D; [] &#x2F;&#x2F; 直接对原数组进行修改</span><br><span class="line">    tmp.forEach((item, index) &#x3D;&gt; &#123;</span><br><span class="line">        while (item &gt; 0) &#123;</span><br><span class="line">            arr.push(index + min)</span><br><span class="line">            item--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(countSort(arr))</span><br><span class="line">&#x2F;&#x2F; [ -12, -3, 1,  1,  2, 4,  5, 6, 12, 21, 21, 54 ]</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -214,8 +223,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>vue</tag>
         <tag>web</tag>
+        <tag>vue</tag>
       </tags>
   </entry>
   <entry>

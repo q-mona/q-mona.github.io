@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.mona.cool/js-sort/</loc>
+    
+    <lastmod>2020-04-20T11:31:59.136Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.mona.cool/js-skill-1/</loc>
+    
+    <lastmod>2020-04-20T11:30:18.591Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.mona.cool/vue-router/</loc>
     
     <lastmod>2020-04-15T09:16:19.461Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://www.mona.cool/vue-swiper/</loc>
     
     <lastmod>2020-04-08T03:07:20.409Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.mona.cool/js-skill-1/</loc>
-    
-    <lastmod>2020-04-08T03:04:21.159Z</lastmod>
     
   </url>
   
