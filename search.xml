@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git基本操作</title>
+    <url>/git/</url>
+    <content><![CDATA[<h1 id="下载项目"><a href="#下载项目" class="headerlink" title="下载项目"></a>下载项目</h1><p>会在当前目录直接创建一个项目的文件夹</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone [项目地址] &#x2F;&#x2F; 例：git clone https:&#x2F;&#x2F;github.com&#x2F;XXX.git</span><br></pre></td></tr></table></figure>
+<h1 id="提交项目"><a href="#提交项目" class="headerlink" title="提交项目"></a>提交项目</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add [文件名] &#x2F;&#x2F; . 为选择全部 例：git add .</span><br><span class="line">git commit -m [提交描述] &#x2F;&#x2F; 例：git commit -m &#39;更新XXX&#39;</span><br><span class="line">git push [别名] [分支] &#x2F;&#x2F; 例：git push origin master</span><br></pre></td></tr></table></figure>
+<h1 id="拉取项目"><a href="#拉取项目" class="headerlink" title="拉取项目"></a>拉取项目</h1><h2 id="方法一：fetch-merge"><a href="#方法一：fetch-merge" class="headerlink" title="方法一：fetch + merge"></a>方法一：fetch + merge</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git fetch [别名] [分支] &#x2F;&#x2F; 例：git push origin master</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 此时项目文件还未覆盖本地文件</span><br><span class="line">&#x2F;&#x2F; 可以使用 git checkout origin&#x2F;master 切换到最新项目查看文件是否符合要求</span><br><span class="line">&#x2F;&#x2F; git checkout master 返回本地</span><br><span class="line"></span><br><span class="line">git merge [别名]&#x2F;[分支] &#x2F;&#x2F; 合并最新项目 例：git merge origin&#x2F;master</span><br></pre></td></tr></table></figure>
+<h2 id="方法二：pull"><a href="#方法二：pull" class="headerlink" title="方法二：pull"></a>方法二：pull</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull [别名] [分支] &#x2F;&#x2F; 例：git pull origin master</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue3-beta版本的基本使用</title>
     <url>/vue-3-Alpha/</url>
     <content><![CDATA[<h1 id="项目的初始化"><a href="#项目的初始化" class="headerlink" title="项目的初始化"></a>项目的初始化</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 安装vue-cil4及以上的版本</span><br><span class="line">npm install -g @vue&#x2F;cli </span><br><span class="line">&#x2F;&#x2F; 查看安装版本 </span><br><span class="line">vue --version</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 创建项目</span><br><span class="line">vue create my-project</span><br><span class="line">&#x2F;&#x2F; 或者用</span><br><span class="line">vue ui</span><br></pre></td></tr></table></figure>
